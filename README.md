@@ -107,23 +107,23 @@ To run the notebooks and reproduce the visualizations locally:
 Here is a glimpse of the analytical plots generated within this project:
 
 ### 1. Current Density-Voltage (J-V) Characteristics
-![J-V Curve](J-V%20Plot/graph/JV_final_annotated.png)
+![J-V Curve](./J-V%20Plot/graph/JV_final_annotated.png?v=2)
 *Illuminated J-V curve simulation highlighting key photovoltaic parameters like Open-Circuit Voltage ($V_{oc}$) and Short-Circuit Current Density ($J_{sc}$).*
 
 ### 2. Efficiency Contour Analysis
-![Thickness Contour](PAL%20vs%20PCE%20Thickness/graphs/PSC_PAL_thickness_contour.png)
+![Thickness Contour](./PAL%20vs%20PCE%20Thickness/graphs/PSC_PAL_thickness_contour.png?v=2)
 *Contour map demonstrating the optimal thickness ranges for the Perovskite Active Layer (PAL) to maximize Power Conversion Efficiency (PCE).*
 
 ### 3. Quantum Efficiency (QE) Spectrum
-![Quantum Efficiency](QE/graph/QE_dual_axis.png)
+![Quantum Efficiency](./QE/graph/QE_dual_axis.png?v=2)
 *Analysis of internal and external quantum efficiency across the visible light spectrum, indicating photon absorption effectiveness.*
 
 ### 4. Temperature Impact on Cell Parameters
-![Temperature Impact](Temperature%20Sweep/graph/temperature_params.png)
+![Temperature Impact](./Temperature%20Sweep/graph/temperature_params.png?v=2)
 *Simulation demonstrating the variation of core performance metrics (like $V_{oc}$, $J_{sc}$, FF, and PCE) under differing operating temperatures.*
 
 ### 5. Dark I-V Analysis
-![Dark IV](PSC_Dark_IV_Analysis_Project/graphs/IV_log.png)
+![Dark IV](./PSC_Dark_IV_Analysis_Project/graphs/IV_log.png?v=2)
 *Logarithmic plot of dark current-voltage characteristics to study recombination mechanisms and leakage currents.*
 
 ## 🎓 Academic Context
