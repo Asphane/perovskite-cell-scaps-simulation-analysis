@@ -24,3 +24,11 @@ __pycache__/
 # IDEs and Editors
 .vscode/
 .idea/
+
+# Irrelevant Directories & Files
+node_modules/
+Images/
+Others/
+Report/
+*.docx
+*.pdf
