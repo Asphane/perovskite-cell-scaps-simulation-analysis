@@ -109,6 +109,18 @@ To move beyond static data visualization, this project includes a highly advance
 - **Random Forest Regressor**: Trained on a dataset of 1,181 SCAPS-1D simulations. It predicts the summary metrics ($PCE$, $V_{oc}$, $J_{sc}$, $FF$) with over **98% accuracy** ($R^2$).
 - **PyTorch Multi-Layer Perceptron (ANN)**: A custom neural network that takes the physical parameters and a voltage point as input and predicts the corresponding current density. This allows the app to generate the **entire continuous J-V curve** dynamically in real-time.
 
+### 🔬 Physics Context & Parameter Significance
+The dashboard allows manipulation of critical physical parameters that govern solar cell physics:
+- **Operating Temperature ($T$)**: Higher temperatures typically increase reverse saturation current and reduce $V_{oc}$ due to increased intrinsic carrier concentration.
+- **Thickness ($d$)**: Optimizing thickness is a trade-off between light absorption (thicker is better) and charge carrier collection (thinner reduces bulk recombination).
+- **Defect Density ($N_t$)**: Higher defect densities introduce Shockley-Read-Hall (SRH) recombination centers, drastically reducing carrier lifetime and overall efficiency.
+- **Acceptor Density ($N_a$)**: Influences the built-in potential and electric field distribution across the perovskite layer.
+
+### 🏋️‍♂️ Model Training & Dataset
+- **Dataset**: The models were trained on data extracted from **1,181 SCAPS-1D simulations** with randomized parameters within realistic physical bounds.
+- **Feature Engineering**: Input features were standardized using `StandardScaler` to ensure stable gradients during PyTorch training. Logarithmic transformation was applied to density parameters to handle the wide dynamic range ($10^{13}$ to $10^{17} \text{ cm}^{-3}$).
+- **PyTorch Training**: The MLP was trained using Mean Squared Error (MSE) loss and the Adam optimizer to learn the continuous mapping $f(\text{physical\_params}, \text{Voltage}) \to \text{Current Density}$.
+
 ### 🌟 Key Features
 1. **Interactive Device Design**: Adjust operating temperature and layer properties (thickness, defect density, acceptor density) using intuitive sliders. Density sliders use logarithmic scaling for easy handling of wide ranges.
 2. **Instant Performance Prediction**: See the predicted Power Conversion Efficiency (PCE), Open-Circuit Voltage ($V_{oc}$), Short-Circuit Current ($J_{sc}$), and Fill Factor (FF) update in real-time as you move the sliders.
