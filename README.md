@@ -119,7 +119,7 @@ The dashboard allows manipulation of critical physical parameters that govern so
 ### 🏋️‍♂️ Model Training & Dataset
 - **Dataset**: The models were trained on data extracted from **1,181 SCAPS-1D simulations** with randomized parameters within realistic physical bounds.
 - **Feature Engineering**: Input features were standardized using `StandardScaler` to ensure stable gradients during PyTorch training. Logarithmic transformation was applied to density parameters to handle the wide dynamic range ($10^{13}$ to $10^{17} \text{ cm}^{-3}$).
-- **PyTorch Training**: The MLP was trained using Mean Squared Error (MSE) loss and the Adam optimizer to learn the continuous mapping $f(\text{physical\_params}, \text{Voltage}) \to \text{Current Density}$.
+- **PyTorch Training**: The MLP was trained using Mean Squared Error (MSE) loss and the Adam optimizer to learn the continuous mapping $f(\text{Parameters}, \text{Voltage}) \to \text{Current Density}$.
 
 ### 🌟 Key Features
 1. **Interactive Device Design**: Adjust operating temperature and layer properties (thickness, defect density, acceptor density) using intuitive sliders. Density sliders use logarithmic scaling for easy handling of wide ranges.
@@ -139,11 +139,11 @@ The dashboard allows manipulation of critical physical parameters that govern so
 *(Note: Please replace the files in `Machine_Learning_Dashboard/assets/` with your correct screenshots!)*
 
 <div align="center">
-  <img src="./Machine_Learning_Dashboard/assets/screenshot1.png" alt="Dashboard Header" width="750"/>
+  <img src="./Images/app-1.png" alt="Dashboard Header" width="750"/>
   <br><br>
-  <img src="./Machine_Learning_Dashboard/assets/screenshot2.png" alt="JV Curve" width="750"/>
+  <img src="./Images/app-2.png" alt="JV Curve" width="750"/>
   <br><br>
-  <img src="./Machine_Learning_Dashboard/assets/screenshot3.png" alt="Optimizer" width="750"/>
+  <img src="./Images/app-3.png" alt="Optimizer" width="750"/>
 </div>
 
 ## 📊 Visualizations & Outputs
