@@ -101,6 +101,31 @@ jupyter notebook
 ```
 *Navigate to the respective directory and open the desired `.ipynb` file to view the analysis.*
 
+## 🤖 Machine Learning Surrogate Dashboard
+
+To move beyond static data visualization, this project includes an interactive, AI-driven web application built with **Streamlit**. Instead of waiting for heavy SCAPS-1D physical simulations, this dashboard uses machine learning to predict solar cell performance instantly.
+
+### Key Features:
+- **Instant Forward Predictions**: Uses a **Random Forest Regressor** trained on 1,181 SCAPS simulations to predict PCE, Voc, Jsc, and FF instantly (>98% accuracy).
+- **Dynamic J-V Curve**: Uses a **PyTorch Multi-Layer Perceptron (ANN)** to predict and plot the continuous Current-Voltage curve in real-time.
+- **Inverse Design Optimizer**: Uses a **Genetic Algorithm** (`differential_evolution`) to automatically find the optimal combination of physical parameters for maximum efficiency.
+- **Sensitivity Analysis**: Allows you to see how changing a single parameter affects Efficiency (PCE), holding others constant.
+- **Premium UI**: Dark mode, glassmorphism cards, and interactive Plotly charts.
+
+### How to Run:
+```bash
+.venv/bin/streamlit run Machine_Learning_Dashboard/app.py
+```
+
+### App Screenshots:
+<div align="center">
+  <img src="./Machine_Learning_Dashboard/assets/screenshot1.png" alt="Dashboard Header" width="700"/>
+  <br><br>
+  <img src="./Machine_Learning_Dashboard/assets/screenshot2.png" alt="JV Curve" width="700"/>
+  <br><br>
+  <img src="./Machine_Learning_Dashboard/assets/screenshot3.png" alt="Optimizer" width="700"/>
+</div>
+
 ## 📊 Visualizations & Outputs
 
 <table align="center">
