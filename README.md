@@ -101,29 +101,37 @@ jupyter notebook
 ```
 *Navigate to the respective directory and open the desired `.ipynb` file to view the analysis.*
 
-## 🤖 Machine Learning Surrogate Dashboard
+## 🤖 Machine Learning Surrogate & Optimization Dashboard
 
-To move beyond static data visualization, this project includes an interactive, AI-driven web application built with **Streamlit**. Instead of waiting for heavy SCAPS-1D physical simulations, this dashboard uses machine learning to predict solar cell performance instantly.
+To move beyond static data visualization, this project includes a highly advanced, AI-driven web application built with **Streamlit**. Traditional SCAPS-1D physical simulations can take minutes or hours when running large sweeps. This dashboard solves that by using trained machine learning models to provide **instantaneous** feedback and design optimization.
 
-### Key Features:
-- **Instant Forward Predictions**: Uses a **Random Forest Regressor** trained on 1,181 SCAPS simulations to predict PCE, Voc, Jsc, and FF instantly (>98% accuracy).
-- **Dynamic J-V Curve**: Uses a **PyTorch Multi-Layer Perceptron (ANN)** to predict and plot the continuous Current-Voltage curve in real-time.
-- **Inverse Design Optimizer**: Uses a **Genetic Algorithm** (`differential_evolution`) to automatically find the optimal combination of physical parameters for maximum efficiency.
-- **Sensitivity Analysis**: Allows you to see how changing a single parameter affects Efficiency (PCE), holding others constant.
-- **Premium UI**: Dark mode, glassmorphism cards, and interactive Plotly charts.
+### 🧠 Core AI Models
+- **Random Forest Regressor**: Trained on a dataset of 1,181 SCAPS-1D simulations. It predicts the summary metrics ($PCE$, $V_{oc}$, $J_{sc}$, $FF$) with over **98% accuracy** ($R^2$).
+- **PyTorch Multi-Layer Perceptron (ANN)**: A custom neural network that takes the physical parameters and a voltage point as input and predicts the corresponding current density. This allows the app to generate the **entire continuous J-V curve** dynamically in real-time.
 
-### How to Run:
+### 🌟 Key Features
+1. **Interactive Device Design**: Adjust operating temperature and layer properties (thickness, defect density, acceptor density) using intuitive sliders. Density sliders use logarithmic scaling for easy handling of wide ranges.
+2. **Instant Performance Prediction**: See the predicted Power Conversion Efficiency (PCE), Open-Circuit Voltage ($V_{oc}$), Short-Circuit Current ($J_{sc}$), and Fill Factor (FF) update in real-time as you move the sliders.
+3. **Dynamic J-V Curve Visualization**: The PyTorch model generates the curve shape, providing insight into the cell's behavior under load.
+4. **Radar Balance Chart**: Visualizes how well-rounded the design is across the 4 key metrics.
+5. **Feature Importance**: See which physical parameters have the most impact on efficiency, derived directly from the Random Forest model.
+6. **Inverse Design Optimizer**: Don't guess the best parameters. Click the "Find Optimal Design" button to run a **Genetic Algorithm** (`scipy.optimize.differential_evolution`) that searches the multi-dimensional space to find the global maximum efficiency configuration.
+7. **Sensitivity Analysis**: Select any parameter to see a line plot of how efficiency varies across its entire range, helping identify sweet spots or degradation trends.
+
+### 🚀 How to Run
 ```bash
 .venv/bin/streamlit run Machine_Learning_Dashboard/app.py
 ```
 
-### App Screenshots:
+### 🖼️ App Screenshots
+*(Note: Please replace the files in `Machine_Learning_Dashboard/assets/` with your correct screenshots!)*
+
 <div align="center">
-  <img src="./Machine_Learning_Dashboard/assets/screenshot1.png" alt="Dashboard Header" width="700"/>
+  <img src="./Machine_Learning_Dashboard/assets/screenshot1.png" alt="Dashboard Header" width="750"/>
   <br><br>
-  <img src="./Machine_Learning_Dashboard/assets/screenshot2.png" alt="JV Curve" width="700"/>
+  <img src="./Machine_Learning_Dashboard/assets/screenshot2.png" alt="JV Curve" width="750"/>
   <br><br>
-  <img src="./Machine_Learning_Dashboard/assets/screenshot3.png" alt="Optimizer" width="700"/>
+  <img src="./Machine_Learning_Dashboard/assets/screenshot3.png" alt="Optimizer" width="750"/>
 </div>
 
 ## 📊 Visualizations & Outputs
