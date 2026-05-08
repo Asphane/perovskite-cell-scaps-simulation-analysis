@@ -27,7 +27,6 @@ __pycache__/
 
 # Irrelevant Directories & Files
 node_modules/
-Images/
 Others/
 Report/
 *.docx
